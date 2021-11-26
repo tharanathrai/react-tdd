@@ -1,6 +1,6 @@
 import React from "react";
 
-const Counter = () => {
+const AsynchCounter = () => {
   const [counter, setCounter] = React.useState(0);
 
   const delayCount = () =>
@@ -11,7 +11,7 @@ const Counter = () => {
   return (
     <>
       <h1 data-testid="Counter"> {counter} </h1>
-      <button data-testid="button-up" onClick={() => setCounter(counter + 1)}>
+      <button data-testid="button-up" onClick={delayCount}>
         Increment
       </button>
       <button data-testid="button-down" onClick={() => setCounter(counter - 1)}>
@@ -20,4 +20,4 @@ const Counter = () => {
     </>
   );
 };
-export default Counter;
+export default AsynchCounter;

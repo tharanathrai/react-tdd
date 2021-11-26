@@ -24,22 +24,22 @@ describe("Basic rendering of counter", () => {
     const { getByTestId } = render(<Counter />);
     expect(getByTestId("button-down")).toBeDisabled();
   });*/
+});
 
-  describe("Testing counter functionality", () => {
-    it("increments counter", () => {
-      const { getByTestId } = render(<Counter />);
+describe("Testing counter functionality", () => {
+  it("increments counter", () => {
+    const { getByTestId } = render(<Counter />);
 
-      fireEvent.click(getByTestId("button-up"));
+    fireEvent.click(getByTestId("button-up"));
 
-      expect(getByTestId("Counter")).toHaveTextContent("1");
-    });
+    expect(getByTestId("Counter")).toHaveTextContent("1");
+  });
 
-    it("decrements counter", () => {
-      const { getByTestId } = render(<Counter />);
+  it("decrements counter", () => {
+    const { getByTestId } = render(<Counter />);
 
-      fireEvent.click(getByTestId("button-down"));
+    fireEvent.click(getByTestId("button-down"));
 
-      expect(getByTestId("Counter")).toHaveTextContent("-1");
-    });
+    expect(getByTestId("Counter")).toHaveTextContent("-1");
   });
 });
