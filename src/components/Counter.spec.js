@@ -1,5 +1,5 @@
 import { shallow } from "enzyme";
-import { render } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import React from "react";
 import Counter from "./Counter";
 
@@ -15,13 +15,31 @@ describe("Basic rendering of counter", () => {
     expect(getByTestId("Counter")).toHaveTextContent(0);
   });
 
-  it("should be enabled", () => {
+  it("should be able to increment", () => {
     const { getByTestId } = render(<Counter />);
     expect(getByTestId("button-up")).not.toHaveAttribute("disabled");
   });
 
-  it("should be disabled", () => {
+  /*it("should be unable to decrement", () => {
     const { getByTestId } = render(<Counter />);
     expect(getByTestId("button-down")).toBeDisabled();
+  });*/
+
+  describe("Testing counter functionality", () => {
+    it("increments counter", () => {
+      const { getByTestId } = render(<Counter />);
+
+      fireEvent.click(getByTestId("button-up"));
+
+      expect(getByTestId("Counter")).toHaveTextContent("1");
+    });
+
+    it("decrements counter", () => {
+      const { getByTestId } = render(<Counter />);
+
+      fireEvent.click(getByTestId("button-down"));
+
+      expect(getByTestId("Counter")).toHaveTextContent("-1");
+    });
   });
 });
