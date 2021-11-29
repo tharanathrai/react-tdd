@@ -11,8 +11,8 @@ describe("Basic rendering of counter", () => {
   });
 
   it("should equal to 0", () => {
-    const { getByTestId } = render(<Counter />);
-    expect(getByTestId("Counter")).toHaveTextContent(0);
+    const component = render(<Counter />);
+    expect(component.getByTestId("Counter")).toHaveTextContent(0);
   });
 
   it("should be able to increment", () => {
