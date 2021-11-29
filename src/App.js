@@ -6,7 +6,9 @@ import Greeting from "./components/testAxios/greeting";
 function App() {
   //return <Counter>Counter</Counter>;
   //return <AsynchCounter></AsynchCounter>;
-  //return <TestAxios></TestAxios>;
+  /*return (
+    <TestAxios url="https://api.github.com/users/tharanathrai"></TestAxios>
+  );*/
 }
 
 export default App;
