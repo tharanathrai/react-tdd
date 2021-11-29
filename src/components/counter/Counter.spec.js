@@ -6,8 +6,8 @@ import Counter from "./Counter";
 describe("Basic rendering of counter", () => {
   it("Should render Counter text", () => {
     const counter = shallow(<Counter />);
-    const counterHeaderText = counter.find(Text);
-    expect(counterHeaderText).toBeDefined();
+    const counterText = counter.find(Text);
+    expect(counterText).toBeDefined();
   });
 
   it("should equal to 0", () => {
